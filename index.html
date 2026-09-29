@@ -1275,6 +1275,11 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 .rsvp-toggle-btn{letter-spacing:.02em!important;text-transform:none!important;padding:14px 8px!important;font-size:18px!important}
 #rsvp-pases-note{display:none!important}
 .rsvp-text,.dc-note,.gifts-sub{color:#2c2f5c}
+
+.bfly .w1,.bfly .w2,.bfly .bd{transition:fill .45s ease,stroke .45s ease}
+.bfly .w1{fill:#F4F4F8;stroke:rgba(255,255,255,.6);stroke-width:.4}.bfly .w2{fill:#C9C9D6}.bfly .bd{fill:#E8E8F0}
+.bfly.on-light svg{filter:drop-shadow(0 1px 3px rgba(10,12,78,.35))}
+.bfly.on-light .w1{fill:#13178b;stroke:#9DA3E8;stroke-width:.6}.bfly.on-light .w2{fill:#3A3FA8}.bfly.on-light .bd{fill:#0A0C4E}
 </style>
 </head>
 <body>
@@ -1304,7 +1309,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 
 <!-- ENVELOPE OPENING SEQUENCE -->
 <div id="envelope-screen" role="button" aria-label="Toca para abrir la invitación" tabindex="0">
-  <img id="env-image" src="envelope.png" alt="">
+  <img id="env-image" src="envelope.jpg" alt="">
   <video id="env-video" muted playsinline preload="auto">
     <source src="envelope.mp4" type="video/mp4">
   </video>
@@ -2685,9 +2690,9 @@ window.addEventListener('resize',()=>ScrollTrigger.refresh());
     var c=cols[Math.random()*cols.length|0], sz=18+Math.random()*16, el=document.createElement('div');
     el.className='bfly';
     el.innerHTML='<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 40 40"><defs><linearGradient id="g'+Math.random().toString(36).slice(2,7)+'" x1="0" y1="0" x2="1" y2="1"></linearGradient></defs>'+
-      '<g class="wl"><path d="M20 20 C12 4 0 6 3 16 C5 22 14 22 20 20Z" fill="'+c[0]+'" opacity=".92"/><path d="M20 21 C12 24 5 34 11 35 C16 36 19 28 20 21Z" fill="'+c[1]+'" opacity=".9"/></g>'+
-      '<g class="wr"><path d="M20 20 C28 4 40 6 37 16 C35 22 26 22 20 20Z" fill="'+c[0]+'" opacity=".92"/><path d="M20 21 C28 24 35 34 29 35 C24 36 21 28 20 21Z" fill="'+c[1]+'" opacity=".9"/></g>'+
-      '<rect x="19.2" y="13" width="1.6" height="16" rx=".8" fill="#0A0C4E"/></svg>';
+      '<g class="wl"><path d="M20 20 C12 4 0 6 3 16 C5 22 14 22 20 20Z" class="w1"/><path d="M20 21 C12 24 5 34 11 35 C16 36 19 28 20 21Z" class="w2"/></g>'+
+      '<g class="wr"><path d="M20 20 C28 4 40 6 37 16 C35 22 26 22 20 20Z" class="w1"/><path d="M20 21 C28 24 35 34 29 35 C24 36 21 28 20 21Z" class="w2"/></g>'+
+      '<rect x="19.2" y="13" width="1.6" height="16" rx=".8" class="bd"/></svg>';
     document.body.appendChild(el);
     var W=innerWidth,H=innerHeight,x0=Math.random()*W,dur=14+Math.random()*10;
     var tl=gsap.timeline({onComplete:function(){el.remove();setTimeout(bfly,1500+Math.random()*3000)}});
@@ -2704,6 +2709,15 @@ window.addEventListener('resize',()=>ScrollTrigger.refresh());
     gsap.fromTo(el,{y:0,opacity:0},{y:innerHeight+40,opacity:1,duration:d,ease:'none',onComplete:function(){el.remove();light()}});
     gsap.to(el,{opacity:.35,duration:.6+Math.random(),repeat:-1,yoyo:true,ease:'sine.inOut',delay:1});
   }
+  setInterval(function(){
+    document.querySelectorAll('.bfly').forEach(function(b){
+      var r=b.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2;
+      if(x<0||y<0||x>innerWidth||y>innerHeight) return;
+      var e=document.elementFromPoint(x,y);
+      var dark=!!(e&&e.closest('.hero,.date-hero,footer,.wheel-item,.cd-block,.rsvp-pases-display,#envelope-screen,#loader,.lightbox,[class*="lightbox"]'));
+      b.classList.toggle('on-light',!dark);
+    });
+  },180);
   var started=false;
   function go(){ if(started) return; started=true;
     var nb=innerWidth<600?5:8, nl=innerWidth<600?14:24;
