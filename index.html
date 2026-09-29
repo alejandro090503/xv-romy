@@ -1280,6 +1280,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 .bfly .w1{fill:#F4F4F8;stroke:rgba(255,255,255,.6);stroke-width:.4}.bfly .w2{fill:#C9C9D6}.bfly .bd{fill:#E8E8F0}
 .bfly.on-light svg{filter:drop-shadow(0 1px 3px rgba(10,12,78,.35))}
 .bfly.on-light .w1{fill:#13178b;stroke:#9DA3E8;stroke-width:.6}.bfly.on-light .w2{fill:#3A3FA8}.bfly.on-light .bd{fill:#0A0C4E}
+.bfly.alt.on-light .w1{fill:#3F4FC8;stroke:#B4BAF0}.bfly.alt.on-light .w2{fill:#5A68D6}.bfly.alt.on-light .bd{fill:#1B2080}
 </style>
 </head>
 <body>
@@ -2688,7 +2689,7 @@ window.addEventListener('resize',()=>ScrollTrigger.refresh());
   var cols=[['#ECECF0','#C0C0C0'],['#FFFFFF','#B8B8C8'],['#E6E6F2','#9A9AB0']];
   function bfly(){
     var c=cols[Math.random()*cols.length|0], sz=18+Math.random()*16, el=document.createElement('div');
-    el.className='bfly';
+    el.className='bfly'+(bfly._n=(bfly._n||0)+1,bfly._n%2?' alt':'');
     el.innerHTML='<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 40 40"><defs><linearGradient id="g'+Math.random().toString(36).slice(2,7)+'" x1="0" y1="0" x2="1" y2="1"></linearGradient></defs>'+
       '<g class="wl"><path d="M20 20 C12 4 0 6 3 16 C5 22 14 22 20 20Z" class="w1"/><path d="M20 21 C12 24 5 34 11 35 C16 36 19 28 20 21Z" class="w2"/></g>'+
       '<g class="wr"><path d="M20 20 C28 4 40 6 37 16 C35 22 26 22 20 20Z" class="w1"/><path d="M20 21 C28 24 35 34 29 35 C24 36 21 28 20 21Z" class="w2"/></g>'+
