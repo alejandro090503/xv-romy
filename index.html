@@ -1155,7 +1155,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 @media (prefers-reduced-motion:reduce){.bfly,.lightfall{display:none}}
 
 /* ===== ROMY v2 ===== */
-:root{--silver-grad:linear-gradient(110deg,#5b5b68 0%,#9d9dab 18%,#f4f4f8 32%,#a9a9b6 46%,#6e6e7b 60%,#d9d9e2 76%,#7c7c89 100%);
+:root{--silver-grad:linear-gradient(110deg,#3a3a48 0%,#6d6d7c 20%,#a8a8b8 34%,#5a5a69 50%,#44444f 64%,#8e8e9e 80%,#3f3f4b 100%);
 --silver-grad-lt:linear-gradient(110deg,#b9b9c6 0%,#ffffff 25%,#cfcfda 45%,#f6f6fa 65%,#a6a6b4 85%,#e9e9f0 100%)}
 @keyframes silverFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
@@ -1164,7 +1164,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
   -webkit-mask-composite:destination-in;mask-image:linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 16%,#000 84%,transparent 100%);mask-composite:intersect}
 /* plata metálica */
 .script,h2 em,h1 em,.hair-word span,.familia-sub,.countdown-sub,.gallery-sub,.itinerary-sub,.loc-time,.familia-group-title,.familia-special-title,.eyebrow,.verse-sig,.story-initials,.cd-lbl,.rsvp-title em,.jv-title,.dc-fig-label,.itv3-time,.date-roman,.loc-type,.rsvp-deadline,.kids-text[style*="script"]{
-  background:var(--silver-grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#6e6e7b;animation:silverFlow 7s ease-in-out infinite;filter:drop-shadow(0 1px 0 rgba(255,255,255,.55)) drop-shadow(0 1px 1.5px rgba(10,12,78,.18))}
+  background:var(--silver-grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#6e6e7b;animation:silverFlow 7s ease-in-out infinite;filter:drop-shadow(0 1px 0 rgba(255,255,255,.7))}
 .hero .word,.hero-eyebrow,.hero-date span,.date-num,.date-eyebrow,.date-lbl,.date-h em,.footer-names,.footer-date,.hero-scroll,.loader-mono{
   background:var(--silver-grad-lt);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#e6e6ee;animation:silverFlow 6s ease-in-out infinite;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
 /* dress code (fabiola) */
@@ -1271,6 +1271,10 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 #rsvp-pases-note{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-soft);text-align:center;margin:0 auto 20px;max-width:420px;display:none;}
 #rsvp-feedback{font-family:var(--serif);font-style:italic;font-size:17px;text-align:center;margin:14px auto 0;max-width:420px;display:none;}
 .rsvp-fields{display:flex;flex-direction:column;gap:10px;max-width:420px;margin:0 auto 20px;}
+
+.rsvp-toggle-btn{letter-spacing:.02em!important;text-transform:none!important;padding:14px 8px!important;font-size:18px!important}
+#rsvp-pases-note{display:none!important}
+.rsvp-text,.dc-note,.gifts-sub{color:#2c2f5c}
 </style>
 </head>
 <body>
