@@ -1153,6 +1153,124 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 @keyframes flap{from{transform:scaleX(1)}to{transform:scaleX(.25)}}
 .lightfall{position:fixed;top:-20px;pointer-events:none;z-index:2;width:3px;height:3px;border-radius:50%;background:#fff;box-shadow:0 0 8px 3px rgba(255,255,255,.75),0 0 18px 6px rgba(192,192,210,.45)}
 @media (prefers-reduced-motion:reduce){.bfly,.lightfall{display:none}}
+
+/* ===== ROMY v2 ===== */
+:root{--silver-grad:linear-gradient(110deg,#5b5b68 0%,#9d9dab 18%,#f4f4f8 32%,#a9a9b6 46%,#6e6e7b 60%,#d9d9e2 76%,#7c7c89 100%);
+--silver-grad-lt:linear-gradient(110deg,#b9b9c6 0%,#ffffff 25%,#cfcfda 45%,#f6f6fa 65%,#a6a6b4 85%,#e9e9f0 100%)}
+@keyframes silverFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
+.sec-flora{position:absolute;inset:-2px;z-index:-1;background-size:cover;background-position:center;background-repeat:no-repeat;pointer-events:none;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 16%,#000 84%,transparent 100%);
+  -webkit-mask-composite:destination-in;mask-image:linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 16%,#000 84%,transparent 100%);mask-composite:intersect}
+/* plata metálica */
+.script,h2 em,h1 em,.hair-word span,.familia-sub,.countdown-sub,.gallery-sub,.itinerary-sub,.loc-time,.familia-group-title,.familia-special-title,.eyebrow,.verse-sig,.story-initials,.cd-lbl,.rsvp-title em,.jv-title,.dc-fig-label,.itv3-time,.date-roman,.loc-type,.rsvp-deadline,.kids-text[style*="script"]{
+  background:var(--silver-grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#6e6e7b;animation:silverFlow 7s ease-in-out infinite;filter:drop-shadow(0 1px 0 rgba(255,255,255,.55)) drop-shadow(0 1px 1.5px rgba(10,12,78,.18))}
+.hero .word,.hero-eyebrow,.hero-date span,.date-num,.date-eyebrow,.date-lbl,.date-h em,.footer-names,.footer-date,.hero-scroll,.loader-mono{
+  background:var(--silver-grad-lt);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#e6e6ee;animation:silverFlow 6s ease-in-out infinite;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+/* dress code (fabiola) */
+.dc-note{font-family:var(--serif);font-size:18px;font-weight:500;font-style:italic;color:var(--ink-soft);margin:0 0 36px}
+.dc-figures{display:flex;align-items:center;justify-content:center;gap:30px;margin:6px auto 12px;max-width:380px}
+.dc-fig{display:flex;flex-direction:column;align-items:center;gap:14px;flex:1}
+.dc-fig img{height:220px;width:auto;display:block;filter:drop-shadow(0 6px 14px rgba(10,12,78,.25))}
+.dc-fig-label{font-family:var(--serif);font-size:20px;font-style:italic;font-weight:600;letter-spacing:1px}
+.dc-fig-sub{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--ink-soft);margin-top:-8px}
+.dc-sep-line{width:1px;align-self:stretch;min-height:118px;background:linear-gradient(180deg,transparent,rgba(19,23,139,.35) 18%,rgba(19,23,139,.35) 82%,transparent)}
+/* contador moderno */
+.countdown-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,2.4vw,22px)!important;max-width:620px;margin:0 auto;perspective:none}
+.cd-block{width:auto!important;aspect-ratio:auto!important;border-radius:22px!important;padding:clamp(12px,3vw,22px) 4px clamp(12px,2.6vw,18px)!important;
+  background:linear-gradient(160deg,#1b20a6 0%,#13178b 45%,#0A0C4E 100%)!important;border:1px solid rgba(220,220,235,.35)!important;
+  box-shadow:0 14px 34px -12px rgba(10,12,78,.55),inset 0 1px 0 rgba(255,255,255,.18)!important;display:flex;flex-direction:column;align-items:center;gap:10px;overflow:hidden}
+.cd-block::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.14),transparent 45%);pointer-events:none}
+.cd-dial{position:relative;width:min(100%,92px);aspect-ratio:1;display:grid;place-items:center}
+.cd-ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.cd-ring .bg{stroke:rgba(255,255,255,.14)!important}
+.cd-ring .fg{stroke:url(#cdGrad)!important;filter:drop-shadow(0 0 3px rgba(255,255,255,.55))!important}
+.cd-num{position:relative;font-family:var(--sans)!important;font-weight:700!important;font-style:normal!important;font-size:clamp(20px,5.6vw,34px)!important;line-height:1!important;letter-spacing:-.02em;
+  background:var(--silver-grad-lt);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:silverFlow 6s ease-in-out infinite}
+.cd-block .cd-lbl{position:relative;margin:0!important;font-size:clamp(9px,2.4vw,12px)!important;letter-spacing:.18em!important;padding-left:.18em!important;font-weight:700!important;
+  background:var(--silver-grad-lt)!important;background-size:220% auto!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;filter:none!important}
+
+.jv-rain{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.jv-rain-item{position:absolute;top:-46px;will-change:transform;opacity:0}
+#regalos .jv-stage{position:relative;z-index:1}
+.jv-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0;margin:26px auto 0;opacity:0}
+.jv-body{perspective:700px;position:relative;width:min(258px,74vw);aspect-ratio:260/200;filter:drop-shadow(0 10px 26px rgba(10,12,78,.25))}
+.jv-body svg.jv-svg{width:100%;height:100%;display:block}
+.jv-flap-wrap{position:absolute;top:23%;left:6.9%;width:86.2%;height:43%;transform-origin:top center;transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .65s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:2}
+.jv-interactive.open .jv-flap-wrap{transform:rotateX(-175deg)}
+.jv-seal{position:absolute;top:52%;left:50%;width:23%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:3;transition:opacity .35s ease,transform .5s cubic-bezier(.4,0,.2,1);pointer-events:none}
+.jv-interactive.open .jv-seal{opacity:0;transform:translate(-50%,-50%) scale(.7)}
+.jv-open-content{overflow:hidden;max-height:0;opacity:0;transition:max-height .55s .3s ease,opacity .4s .38s ease;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 16px;text-align:center;pointer-events:none}
+.jv-interactive.open .jv-open-content{max-height:300px;opacity:1;pointer-events:auto;margin-top:20px}
+.jv-mailbox-icon{width:42px;height:42px;color:var(--gold);margin-top:6px}
+.jv-title{font-family:var(--script);font-size:clamp(28px,8vw,34px);line-height:1.4;padding:.08em 0;background:var(--silver-grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#13178b;animation:silverFlow 7s ease-in-out infinite}
+.jv-desc{font-family:var(--serif);font-size:17px;font-weight:500;font-style:italic;color:var(--ink);opacity:.86;line-height:1.75;max-width:300px}
+.jv-tap-hint{font-family:var(--italiana);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:18px;opacity:0;transition:opacity .5s ease;position:relative;z-index:1}
+.jv-tap-hint.show{opacity:.85;animation:envHintPulse 2.4s ease-in-out infinite}
+.jv-interactive.open~.jv-tap-hint{opacity:0!important;animation:none;pointer-events:none}
+@keyframes envHintPulse{0%,100%{opacity:.5}50%{opacity:.95}}
+.jv-body.landed{animation:envBreathe 3.6s ease-in-out infinite}
+@keyframes envBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+@media(prefers-reduced-motion:reduce){.jv-body.landed,.jv-tap-hint.show{animation:none!important}}
+.rsvp-card{max-width:580px;margin:0 auto;background:rgba(255,255,255,.84);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(192,192,200,.38);padding:clamp(44px,6vw,76px) clamp(28px,5vw,68px);position:relative;box-shadow:0 24px 64px rgba(10,12,78,.10),0 4px 20px rgba(192,192,200,.14);}
+.rsvp-card::before{content:"";position:absolute;inset:10px;border:1px solid rgba(192,192,200,.20);pointer-events:none;}
+.rsvp-corner{position:absolute;width:52px;height:52px;pointer-events:none;}
+.rsvp-corner--tl{top:0;left:0;}
+.rsvp-corner--tr{top:0;right:0;transform:scaleX(-1);}
+.rsvp-corner--bl{bottom:0;left:0;transform:scaleY(-1);}
+.rsvp-corner--br{bottom:0;right:0;transform:scale(-1,-1);}
+.rsvp-inner{text-align:center;}
+.rsvp-ornament{display:block;margin:0 auto 28px;width:min(280px,75vw);height:auto}
+.rsvp-title{font-family:var(--display);font-style:italic;font-size:clamp(32px,4.2vw,52px);color:var(--ink);margin-bottom:18px;line-height:1.15;}
+.rsvp-title em{color:var(--gold);font-style:italic;}
+.rsvp-text{font-family:var(--serif);font-size:clamp(15px,1.5vw,17px);color:var(--ink-soft);line-height:1.85;margin-bottom:36px;font-weight:500;max-width:420px;margin-left:auto;margin-right:auto;}
+.rsvp-divider{display:flex;align-items:center;gap:14px;margin-bottom:32px;max-width:320px;margin-left:auto;margin-right:auto;}
+.rsvp-divider::before,.rsvp-divider::after{content:"";flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(192,192,200,.45),transparent);}
+.rsvp-divider-heart{color:var(--gold);flex-shrink:0;opacity:.8;}
+.rsvp-fields{display:flex;flex-direction:column;gap:14px;max-width:420px;margin:0 auto 28px}
+.rsvp-input{
+  width:100%;padding:15px 20px;
+  border:1.5px solid rgba(192,192,200,.28);
+  border-radius:12px;
+  background:rgba(255,255,255,.78);
+  font-family:var(--sans);font-size:15px;font-weight:500;color:var(--ink);
+  letter-spacing:.03em;outline:none;
+  transition:border-color .3s,box-shadow .3s,background .3s;
+  -webkit-appearance:none;min-height:52px;
+}
+.rsvp-input:focus{border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(192,192,200,.15);background:rgba(255,255,255,.96);}
+.rsvp-input::placeholder{color:var(--ink-soft);opacity:.6;font-weight:400}
+.rsvp-input:focus-visible{outline:2px solid var(--gold-deep);outline-offset:2px;border-color:var(--gold-deep);}
+.rsvp-btn{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  width:100%;max-width:420px;margin:0 auto;
+  padding:18px 36px;border-radius:50px;
+  border:1.5px solid rgba(192,192,200,.5);
+  background:linear-gradient(135deg,#c6e2ff 0%,#deeeff 100%);
+  font-family:var(--sans);font-size:12px;font-weight:700;
+  letter-spacing:.35em;text-transform:uppercase;
+  color:var(--ink);cursor:pointer;min-height:56px;
+  position:relative;overflow:hidden;
+  transition:transform .25s,box-shadow .25s;
+  box-shadow:0 6px 20px rgba(19,23,139,.45),0 2px 8px rgba(192,192,200,.18);
+}
+.rsvp-btn::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--gold) 0%,#f2f2f7 50%,var(--gold) 100%);opacity:0;transition:opacity .4s;border-radius:50px;}
+.rsvp-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(192,192,200,.3);}
+.rsvp-btn:hover::after{opacity:1;}
+.rsvp-btn > *{position:relative;z-index:1;}
+.rsvp-pases-display{max-width:420px;margin:0 auto 28px;padding:20px 32px;background:rgba(19,23,139,.18);border:1px solid rgba(192,192,200,.28);border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.rsvp-pases-label{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--ink-soft);}
+.rsvp-pases-num{font-family:var(--display);font-style:italic;font-size:clamp(36px,5vw,52px);color:var(--gold-deep);line-height:1;}
+.rsvp-deadline{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-family:var(--sans);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-deep);padding-left:.4em;font-weight:600;}
+.rsvp-toggle{display:flex;gap:10px;max-width:420px;margin:0 auto 20px;}
+.rsvp-toggle-btn{flex:1;padding:14px 8px;border:1.5px solid rgba(192,192,200,.28);background:rgba(255,255,255,.6);cursor:pointer;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink);border-radius:8px;transition:all .25s;}
+.rsvp-toggle-btn:disabled{opacity:.45;cursor:not-allowed;}
+.rsvp-toggle-btn:focus-visible,.rsvp-btn:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;}
+.rsvp-toggle-btn.rsvp-toggle-selected-yes{background:rgba(19,23,139,.14);border-color:#13178b;color:#13178b;}
+.rsvp-toggle-btn.rsvp-toggle-selected-no{background:rgba(94,94,106,.09);border-color:var(--gold-deep);color:var(--gold-deep);}
+#rsvp-pases-note{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-soft);text-align:center;margin:0 auto 20px;max-width:420px;display:none;}
+#rsvp-feedback{font-family:var(--serif);font-style:italic;font-size:17px;text-align:center;margin:14px auto 0;max-width:420px;display:none;}
+.rsvp-fields{display:flex;flex-direction:column;gap:10px;max-width:420px;margin:0 auto 20px;}
 </style>
 </head>
 <body>
@@ -1244,7 +1362,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="seam" style="--from:transparent;--to:var(--surface)" aria-hidden="true"></div>
 
   <!-- VERSO -->
-  <section class="section-surface">
+  <section class="section-surface" data-flora>
+    <div class="sec-flora" style="background-image:url('bg-mar1.webp');opacity:0.3"></div>
     <div class="container">
       <div class="verse-wrap">
         <svg class="verse-ornament" viewBox="0 0 360 80" fill="none" aria-hidden="true">
@@ -1318,7 +1437,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="seam" style="--from:var(--surface);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- FAMILIA -->
-  <section class="section-paper familia">
+  <section class="section-paper familia" data-flora>
+    <div class="sec-flora" style="background-image:url('bg-mar2.webp');opacity:0.35"></div>
     <div class="container">
       <svg class="familia-ornament" viewBox="0 0 280 50" fill="none" aria-hidden="true">
         <g stroke="var(--gold)" stroke-width=".8" opacity=".7" fill="none">
@@ -1358,7 +1478,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="seam" style="--from:var(--paper);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- UBICACIONES -->
-  <section class="section-paper locs">
+  <section class="section-paper locs" data-flora>
+    <div class="sec-flora" style="background-image:url('bg-mar4.webp');opacity:0.3"></div>
     <div class="container">
       <div style="text-align:center">
         <div class="eyebrow">Acompáñanos</div>
@@ -1419,17 +1540,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="seam" style="--from:var(--paper);--to:var(--surface)" aria-hidden="true"></div>
 
   <!-- COUNTDOWN -->
-  <section class="section-surface countdown">
+  <section class="section-surface countdown" data-flora>
+    <div class="sec-flora" style="background-image:url('bg-mar5.webp');opacity:0.4"></div>
     <div class="container">
       <div class="eyebrow">Cuenta regresiva</div>
       <h2>Falta <em>muy</em> poco</h2>
       <div class="countdown-sub">para mi gran noche</div>
-      <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="cdGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#13178b"/><stop offset=".55" stop-color="#9A9AA6"/><stop offset="1" stop-color="#13178b"/></linearGradient></defs></svg>
+      <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="cdGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#b8b8c6"/><stop offset="1" stop-color="#f4f4f8"/></linearGradient></defs></svg>
       <div class="countdown-grid" id="cd">
-        <div class="cd-block"><svg class="cd-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="46"/><circle class="fg" cx="50" cy="50" r="46" stroke-dasharray="289" stroke-dashoffset="289"/></svg><div class="cd-num" id="cd-d">000</div><div class="cd-lbl">Días</div></div>
-        <div class="cd-block"><svg class="cd-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="46"/><circle class="fg" cx="50" cy="50" r="46" stroke-dasharray="289" stroke-dashoffset="289"/></svg><div class="cd-num" id="cd-h">00</div><div class="cd-lbl">Horas</div></div>
-        <div class="cd-block"><svg class="cd-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="46"/><circle class="fg" cx="50" cy="50" r="46" stroke-dasharray="289" stroke-dashoffset="289"/></svg><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">Minutos</div></div>
-        <div class="cd-block"><svg class="cd-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="46"/><circle class="fg" cx="50" cy="50" r="46" stroke-dasharray="289" stroke-dashoffset="289"/></svg><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">Segundos</div></div>
+        <div class="cd-block"><div class="cd-dial"><svg class="cd-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="46"/><circle class="fg" cx="50" cy="50" r="46" stroke-dasharray="289" stroke-dashoffset="289"/></svg><div class="cd-num" id="cd-d">000</div></div><div class="cd-lbl">Días</div></div>
+        <div class="cd-block"><div class="cd-dial"><svg class="cd-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="46"/><circle class="fg" cx="50" cy="50" r="46" stroke-dasharray="289" stroke-dashoffset="289"/></svg><div class="cd-num" id="cd-h">00</div></div><div class="cd-lbl">Horas</div></div>
+        <div class="cd-block"><div class="cd-dial"><svg class="cd-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="46"/><circle class="fg" cx="50" cy="50" r="46" stroke-dasharray="289" stroke-dashoffset="289"/></svg><div class="cd-num" id="cd-m">00</div></div><div class="cd-lbl">Minutos</div></div>
+        <div class="cd-block"><div class="cd-dial"><svg class="cd-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="46"/><circle class="fg" cx="50" cy="50" r="46" stroke-dasharray="289" stroke-dashoffset="289"/></svg><div class="cd-num" id="cd-s">00</div></div><div class="cd-lbl">Segundos</div></div>
       </div>
     </div>
   </section>
@@ -1438,7 +1560,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="seam" style="--from:var(--surface);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- ITINERARIO -->
-  <section class="section-paper itinerary">
+  <section class="section-paper itinerary" data-flora>
+    <div class="sec-flora" style="background-image:url('bg-mar3.webp');opacity:0.28"></div>
     <span class="mono-wm" aria-hidden="true">Romy</span>
     <div class="container">
       <div class="eyebrow">El Gran Día</div>
@@ -1474,163 +1597,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="seam" style="--from:var(--paper);--to:var(--bg)" aria-hidden="true"></div>
 
   <!-- DRESS CODE -->
-  <section class="section-bg dress">
+  <section class="section-bg dress" data-flora>
+    <div class="sec-flora" style="background-image:url('bg-mar1.webp');opacity:0.32"></div>
     <div class="container">
       <div class="eyebrow">Código de vestimenta</div>
       <h2>Dress <em>Code</em></h2>
       <div class="dress-sub">Formal</div>
-
-      <div class="dress-cols">
-
-        <!-- ——— ELLOS ——— -->
-        <div class="dress-col">
-          <div class="dress-col-head">Ellos</div>
-          <div class="dress-figures">
-
-            <!-- TRAJE / TUXEDO -->
-            <div class="garment-item">
-              <svg viewBox="0 0 80 200" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Silueta completa: saco + pantalón -->
-                <path d="M40 14 L35 21 C22 25 5 33 3 46 C1 65 3 86 6 104 L16 200 L37 200 C37 158 39 130 40 120 C41 130 43 158 43 200 L64 200 L74 104 C77 86 79 65 77 46 C75 33 58 25 45 21 Z" fill="#13178b" stroke="#0A0C4E" stroke-width="1.5"/>
-                <!-- Línea de tiro del saco -->
-                <line x1="6" y1="104" x2="74" y2="104" stroke="#0A0C4E" stroke-width="0.7" opacity="0.45"/>
-                <!-- Raya del pantalón -->
-                <line x1="37.5" y1="104" x2="37" y2="126" stroke="rgba(255,255,255,0.13)" stroke-width="0.7"/>
-                <line x1="42.5" y1="104" x2="43" y2="126" stroke="rgba(255,255,255,0.13)" stroke-width="0.7"/>
-                <!-- Camisa blanca visible entre solapas -->
-                <path d="M40 14 L35 21 L34 62 C36 84 38 96 40 99 C42 96 44 84 46 62 L45 21 Z" fill="#F5F3EE"/>
-                <!-- Puntas del cuello de camisa -->
-                <path d="M35 21 L37 28 L40 23" stroke="#D5D0C8" stroke-width="0.8" fill="none"/>
-                <path d="M45 21 L43 28 L40 23" stroke="#D5D0C8" stroke-width="0.8" fill="none"/>
-                <!-- Solapa izquierda (pico — estilo tuxedo) -->
-                <path d="M35 21 C22 24 8 31 5 43 L20 59 L34 47 Z" fill="#13178b" stroke="#0A0C4E" stroke-width="1.4"/>
-                <line x1="34" y1="47" x2="20" y2="59" stroke="#0A0C4E" stroke-width="1.1"/>
-                <!-- Solapa derecha -->
-                <path d="M45 21 C58 24 72 31 75 43 L60 59 L46 47 Z" fill="#13178b" stroke="#0A0C4E" stroke-width="1.4"/>
-                <line x1="46" y1="47" x2="60" y2="59" stroke="#0A0C4E" stroke-width="1.1"/>
-                <!-- Corbatín / bow tie -->
-                <path d="M39 18 L33 21 L39 24 Z" fill="#C0C0C0" stroke="#5E5E6A" stroke-width="0.8"/>
-                <path d="M41 18 L47 21 L41 24 Z" fill="#C0C0C0" stroke="#5E5E6A" stroke-width="0.8"/>
-                <ellipse cx="40" cy="21" rx="1.8" ry="2.5" fill="#C0C0C0" stroke="#5E5E6A" stroke-width="0.8"/>
-                <!-- Botón del saco -->
-                <circle cx="40" cy="80" r="1.8" stroke="#0A0C4E" stroke-width="1" fill="none"/>
-                <!-- Pañuelo de bolsillo -->
-                <path d="M60 46 L63 39 L68 42 L65 49" fill="#F5F3EE" stroke="#C0C0C0" stroke-width="0.9"/>
-                <!-- Puños de camisa -->
-                <line x1="3.5" y1="90" x2="5.5" y2="100" stroke="rgba(255,255,255,0.22)" stroke-width="2.5"/>
-                <line x1="76.5" y1="90" x2="74.5" y2="100" stroke="rgba(255,255,255,0.22)" stroke-width="2.5"/>
-              </svg>
-              <span class="garment-label">Etiqueta</span>
-            </div>
-
-            <!-- SACO / BLAZER -->
-            <div class="garment-item">
-              <svg viewBox="0 0 80 200" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Silueta completa: blazer + pantalón -->
-                <path d="M40 14 L34 22 C21 26 5 35 3 48 C1 67 3 89 7 107 L17 200 L37 200 C37 158 39 132 40 122 C41 132 43 158 43 200 L63 200 L73 107 C77 89 79 67 77 48 C75 35 59 26 46 22 Z" fill="#13178b" stroke="#0A0C4E" stroke-width="1.5"/>
-                <!-- Línea tiro del saco -->
-                <line x1="7" y1="107" x2="73" y2="107" stroke="#0A0C4E" stroke-width="0.7" opacity="0.45"/>
-                <!-- Raya pantalón -->
-                <line x1="37.5" y1="107" x2="37" y2="128" stroke="rgba(255,255,255,0.13)" stroke-width="0.7"/>
-                <line x1="42.5" y1="107" x2="43" y2="128" stroke="rgba(255,255,255,0.13)" stroke-width="0.7"/>
-                <!-- Camisa blanca -->
-                <path d="M40 14 L34 22 L33 70 C35 90 37 104 40 107 C43 104 45 90 47 70 L46 22 Z" fill="#F5F3EE"/>
-                <!-- Puntas cuello camisa -->
-                <path d="M34 22 L36 30 L40 25" stroke="#CCC" stroke-width="0.8" fill="none"/>
-                <path d="M46 22 L44 30 L40 25" stroke="#CCC" stroke-width="0.8" fill="none"/>
-                <!-- Solapa izquierda (muesca — estilo blazer) -->
-                <path d="M34 22 C22 26 8 34 6 46 L22 62 L33 50 Z" fill="#13178b" stroke="#0A0C4E" stroke-width="1.4"/>
-                <line x1="33" y1="50" x2="22" y2="62" stroke="#0A0C4E" stroke-width="1.1"/>
-                <!-- Solapa derecha -->
-                <path d="M46 22 C58 26 72 34 74 46 L58 62 L47 50 Z" fill="#13178b" stroke="#0A0C4E" stroke-width="1.4"/>
-                <line x1="47" y1="50" x2="58" y2="62" stroke="#0A0C4E" stroke-width="1.1"/>
-                <!-- Corbata (dorada con rayas) -->
-                <path d="M38 24 L42 24 L44 76 L40 84 L36 76 Z" fill="#C0C0C0" stroke="#5E5E6A" stroke-width="0.9"/>
-                <!-- Nudo de corbata -->
-                <path d="M37 25 Q40 22 43 25 Q42 30 40 28 Q38 30 37 25 Z" fill="#5E5E6A"/>
-                <!-- Rayas de corbata -->
-                <line x1="38.5" y1="36" x2="42" y2="33" stroke="rgba(255,255,255,0.28)" stroke-width="1.4"/>
-                <line x1="38" y1="50" x2="42" y2="47" stroke="rgba(255,255,255,0.28)" stroke-width="1.4"/>
-                <line x1="37.5" y1="64" x2="41.5" y2="61" stroke="rgba(255,255,255,0.28)" stroke-width="1.4"/>
-                <!-- 2 botones del blazer -->
-                <circle cx="40" cy="72" r="1.8" stroke="#0A0C4E" stroke-width="1" fill="none"/>
-                <circle cx="40" cy="86" r="1.8" stroke="#0A0C4E" stroke-width="1" fill="none"/>
-                <!-- Bolsillos laterales -->
-                <path d="M14 86 L14 92 L24 92 L24 86" stroke="#0A0C4E" stroke-width="1" fill="none"/>
-                <path d="M66 86 L66 92 L56 92 L56 86" stroke="#0A0C4E" stroke-width="1" fill="none"/>
-                <!-- Botones de manga (3 por manga) -->
-                <circle cx="5" cy="93" r="1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none"/>
-                <circle cx="5" cy="97" r="1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none"/>
-                <circle cx="75" cy="93" r="1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none"/>
-                <circle cx="75" cy="97" r="1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none"/>
-              </svg>
-              <span class="garment-label">Saco</span>
-            </div>
-
-          </div>
+      <p class="dc-note">Acompáñanos vestido para la ocasión</p>
+      <div class="dc-figures">
+        <div class="dc-fig">
+          <img src="caballero.png" alt="Caballero, traje formal" loading="lazy" />
+          <span class="dc-fig-label">Caballeros</span>
+          <span class="dc-fig-sub">traje formal</span>
         </div>
-
-        <!-- ——— DIVISOR ——— -->
-        <div class="dress-vline" aria-hidden="true"></div>
-
-        <!-- ——— ELLAS ——— -->
-        <div class="dress-col">
-          <div class="dress-col-head">Ellas</div>
-          <div class="dress-figures">
-
-            <!-- VESTIDO COCKTAIL (corto, A-line) -->
-            <div class="garment-item">
-              <svg viewBox="0 0 80 175" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Silueta completa: escote V, cuerpo ajustado, falda A-line -->
-                <path d="M40 26 L52 8 C55 14 57 36 57 66 C57 74 55 80 52 84 C58 96 64 122 66 168 L14 168 C16 122 22 96 28 84 C25 80 23 74 23 66 C23 36 25 14 28 8 Z" fill="#13178b" stroke="#0A0C4E" stroke-width="1.5"/>
-                <!-- Tirantes finos -->
-                <line x1="28" y1="8" x2="24" y2="2" stroke="#0A0C4E" stroke-width="1.2"/>
-                <line x1="52" y1="8" x2="56" y2="2" stroke="#0A0C4E" stroke-width="1.2"/>
-                <!-- Escote en V -->
-                <path d="M28 8 Q40 24 52 8" stroke="#0A0C4E" stroke-width="1.1" fill="none"/>
-                <!-- Costura de cintura -->
-                <path d="M23 66 C26 74 32 78 40 78 C48 78 54 74 57 66" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
-                <!-- Pliegues de la falda (sutiles) -->
-                <path d="M33 84 C29 104 21 138 18 168" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
-                <path d="M47 84 C51 104 59 138 62 168" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
-                <!-- Dobladillo -->
-                <path d="M14 168 Q40 165 66 168" stroke="#0A0C4E" stroke-width="0.9" fill="none"/>
-              </svg>
-              <span class="garment-label">Cocktail</span>
-            </div>
-
-            <!-- VESTIDO LARGO (gown, elegante) -->
-            <div class="garment-item">
-              <svg viewBox="0 0 80 220" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Silueta completa: escote V, cuerpo ceñido, falda larga A-line -->
-                <path d="M40 28 L52 10 C55 16 57 38 57 70 C57 78 55 84 52 88 C56 104 60 150 62 215 L18 215 C20 150 24 104 28 88 C25 84 23 78 23 70 C23 38 25 16 28 10 Z" fill="#13178b" stroke="#0A0C4E" stroke-width="1.5"/>
-                <!-- Tirantes finos -->
-                <line x1="28" y1="10" x2="24" y2="4" stroke="#0A0C4E" stroke-width="1.2"/>
-                <line x1="52" y1="10" x2="56" y2="4" stroke="#0A0C4E" stroke-width="1.2"/>
-                <!-- Escote en V -->
-                <path d="M28 10 Q40 26 52 10" stroke="#0A0C4E" stroke-width="1.1" fill="none"/>
-                <!-- Costura de cintura -->
-                <path d="M23 70 C26 78 32 82 40 82 C48 82 54 78 57 70" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
-                <!-- Caída elegante de la falda (líneas sutiles) -->
-                <path d="M36 88 C34 120 31 165 30 215" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
-                <path d="M44 88 C46 120 49 165 50 215" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
-                <!-- Dobladillo -->
-                <path d="M18 215 Q40 212 62 215" stroke="#0A0C4E" stroke-width="0.9" fill="none"/>
-              </svg>
-              <span class="garment-label">Vestido largo</span>
-            </div>
-
-          </div>
+        <div class="dc-sep-line" aria-hidden="true"></div>
+        <div class="dc-fig">
+          <img src="dama.png" alt="Dama, vestido formal" loading="lazy" />
+          <span class="dc-fig-label">Damas</span>
+          <span class="dc-fig-sub">vestido largo</span>
         </div>
-
-      </div><!-- /.dress-cols -->
-
-      <div class="dress-note">Evita rojo &nbsp;·&nbsp; beige &nbsp;·&nbsp; bugambilia &nbsp;·&nbsp; blanco &nbsp;·&nbsp; azul marino</div>
-      <div class="dress-note" style="text-transform:none;letter-spacing:.15em;font-size:12px;margin-bottom:20px;">Colores sugeridos</div>
-      <div class="dress-note" style="opacity:.9">Colores reservados para la quinceañera · te pedimos evitarlos</div>
-      <div class="dress-swatches">
-        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#2a29a0,#161575)"></div><div class="swatch-n">Azul</div></div>
-        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#e2e2e6,#bbcecc)"></div><div class="swatch-n">Plata</div></div>
       </div>
     </div>
   </section>
@@ -1639,7 +1624,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="seam" style="--from:var(--bg);--to:var(--surface)" aria-hidden="true"></div>
 
   <!-- GALLERY — RUEDA DE LA FORTUNA -->
-  <section class="section-surface gallery">
+  <section class="section-surface gallery" data-flora>
+    <div class="sec-flora" style="background-image:url('bg-mar2.webp');opacity:0.3"></div>
     <div class="container gallery-head">
       <div class="eyebrow">Momentos</div>
       <h2>Del camino <em>que</em> nos trajo aquí</h2>
@@ -1696,73 +1682,62 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="seam" style="--from:var(--paper);--to:var(--surface)" aria-hidden="true"></div>
 
   <!-- GIFTS -->
-  <section class="section-surface gifts">
+  <section class="section-surface gifts" id="regalos" data-flora>
+    <div class="jv-rain" id="envRain" aria-hidden="true"></div>
+    <div class="sec-flora" style="background-image:url('bg-mar4.webp');opacity:0.35"></div>
     <div class="container">
       <div class="gifts-head">
         <div class="eyebrow">Tu presencia es mi mejor regalo</div>
         <h2>Mesa <em>de</em> regalos</h2>
         <p class="gifts-sub">Lo más importante es tu asistencia; si deseas tener un detalle conmigo, el regalo que sea de tu agrado será recibido con mucho cariño</p>
       </div>
-      <div class="gifts-grid">
-        
-      </div>
+          <div class="jv-stage">
+      
+      
+      
 
-      <!-- Sobre interactivo: lluvia de sobres -->
-      <div style="margin:52px auto 0;display:flex;flex-direction:column;align-items:center;gap:0;">
-        <button class="env-interactive" aria-label="Sobre — toca para abrir" aria-expanded="false">
-          <div class="env-body">
-            <!-- SVG cuerpo del sobre -->
-            <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
+      <button class="jv-interactive" id="envGift" type="button" aria-label="Sobre — toca para abrir" aria-expanded="false">
+        <div class="jv-body" id="envGiftBody">
+          <svg class="jv-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="envPaper" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#eef0f6"/>
+              </linearGradient>
+            </defs>
+            <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#envPaper)" stroke="rgba(19,23,139,.45)" stroke-width="1.4"/>
+            <path d="M18 184 L130 110 L242 184" stroke="rgba(19,23,139,.28)" stroke-width="1" fill="none"/>
+          </svg>
+          <div class="jv-flap-wrap" aria-hidden="true">
+            <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
               <defs>
-                <linearGradient id="oc-env-fill" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#EAE6DC"/>
-                  <stop offset="100%" stop-color="#F5F3EE"/>
+                <linearGradient id="envFlap" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#eef0f6"/><stop offset="100%" stop-color="#f7f8fb"/>
                 </linearGradient>
               </defs>
-              <!-- Cuerpo -->
-              <rect x="18" y="52" width="224" height="132" rx="10"
-                    fill="url(#oc-env-fill)" stroke="rgba(192,192,192,.35)" stroke-width="1.4"/>
-              <!-- V central (pliegue inferior) -->
-              <path d="M18 184 L130 110 L242 184" stroke="rgba(192,192,192,.3)" stroke-width="1" fill="none"/>
-              <!-- Líneas decorativas (lluvia dorada) -->
-              <line x1="90"  y1="30" x2="90"  y2="20" stroke="#C0C0C0" stroke-width="1.3" stroke-linecap="round" opacity=".45"/>
-              <line x1="130" y1="24" x2="130" y2="14" stroke="#C0C0C0" stroke-width="1.3" stroke-linecap="round" opacity=".6"/>
-              <line x1="170" y1="30" x2="170" y2="20" stroke="#C0C0C0" stroke-width="1.3" stroke-linecap="round" opacity=".45"/>
-              <line x1="110" y1="18" x2="110" y2="10" stroke="#ECECF0" stroke-width="1"   stroke-linecap="round" opacity=".35"/>
-              <line x1="150" y1="18" x2="150" y2="10" stroke="#ECECF0" stroke-width="1"   stroke-linecap="round" opacity=".35"/>
-              <!-- Sello O&C -->
-              <circle cx="130" cy="118" r="16" fill="rgba(192,192,192,.12)" stroke="rgba(192,192,192,.45)" stroke-width="1"/>
-              <text x="130" y="123" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#13178b" opacity=".8">O&amp;C</text>
+              <path d="M0 0 L112 86 L224 0 Z" fill="url(#envFlap)" stroke="rgba(19,23,139,.45)" stroke-width="1.5" stroke-linejoin="round"/>
             </svg>
-            <!-- Solapa animable -->
-            <div class="env-flap-wrap" aria-hidden="true">
-              <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%">
-                <defs>
-                  <linearGradient id="oc-flap-fill" x1="0" y1="1" x2="1" y2="0">
-                    <stop offset="0%" stop-color="#ECECF0"/>
-                    <stop offset="100%" stop-color="#F5F3EE"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0 0 L112 86 L224 0 Z"
-                      fill="url(#oc-flap-fill)" stroke="rgba(192,192,192,.45)" stroke-width="1.5" stroke-linejoin="round"/>
-              </svg>
-            </div>
           </div>
-          <!-- Contenido revelado al abrir -->
-          <div class="env-open-content" aria-live="polite">
-            <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="8" y="22" width="36" height="24" rx="5"/>
-              <path d="M8 30 Q26 38 44 30"/>
-              <rect x="18" y="8" width="16" height="16" rx="2"/>
-              <path d="M18 8 Q26 3 34 8"/>
-              <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
-            </svg>
-            <p class="env-title">Lluvia de sobres</p>
-            <p class="env-desc">El día de la celebración habrá un buzón<br>donde podrás depositar tu sobre con todo el cariño.</p>
-          </div>
-        </button>
-        <p class="env-tap-hint">Toca el sobre</p>
-      </div>
+          <svg class="jv-seal" viewBox="0 0 60 60" aria-hidden="true">
+            <circle cx="30" cy="30" r="28" fill="#13178b"/>
+            <circle cx="30" cy="30" r="28" fill="none" stroke="#0A0C4E" stroke-width="2" opacity=".55"/>
+            <circle cx="30" cy="30" r="21.5" fill="none" stroke="#E4E4EC" stroke-width="1.1" opacity=".9"/>
+            <text x="30" y="37" text-anchor="middle" font-family="'Pinyon Script', cursive" font-size="24" fill="#E4E4EC">R</text>
+          </svg>
+        </div>
+        <div class="jv-open-content" aria-live="polite">
+          <svg class="jv-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="8" y="22" width="36" height="24" rx="5"/>
+            <path d="M8 30 Q26 38 44 30"/>
+            <rect x="18" y="8" width="16" height="16" rx="2"/>
+            <path d="M18 8 Q26 3 34 8"/>
+            <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
+          </svg>
+          <p class="jv-title">Lluvia de sobres</p>
+          <p class="jv-desc">El día de mi celebración habrá una urna donde podrás depositar tu sobre con mucho cariño.</p>
+        </div>
+      </button>
+      <p class="jv-tap-hint" id="envGiftHint">Toca para abrir</p>
+    </div>
 
     </div>
   </section>
@@ -1771,7 +1746,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="seam" style="--from:var(--surface);--to:var(--bg)" aria-hidden="true"></div>
 
   <!-- ALBUM QR -->
-  <section class="section-bg album">
+  <section class="section-bg album" data-flora>
+    <div class="sec-flora" style="background-image:url('bg-mar3.webp');opacity:0.28"></div>
     <div class="container album-inner">
       <div class="eyebrow">Álbum compartido</div>
       <h2>Comparte <em>tus</em> fotos con nosotros</h2>
@@ -1788,36 +1764,67 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <div class="seam" style="--from:var(--bg);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- RSVP -->
-  <section class="section-paper rsvp">
-    <div class="container rsvp-inner">
-      <svg class="rsvp-ornament" viewBox="0 0 360 80" fill="none" aria-hidden="true">
-        <g stroke="var(--gold)" stroke-width=".9" opacity=".75" fill="none">
-          <path d="M30 40 Q70 18 110 40 Q140 58 170 40"/>
-          <path d="M190 40 Q220 58 250 40 Q290 18 330 40"/>
-          <circle cx="180" cy="40" r="4"/>
-          <circle cx="180" cy="40" r="1.5" fill="var(--gold)" stroke="none"/>
-          <path d="M10 40 L30 40" opacity=".5"/>
-          <path d="M330 40 L350 40" opacity=".5"/>
-        </g>
-      </svg>
-      <div class="eyebrow">Confirma tu asistencia</div>
-      <h2>Tu presencia <em>lo</em> es todo</h2>
-      <p id="rsvp-pases-note" style="display:none"></p>
-      <div class="rsvp-pases-display" id="rsvp-pases-display" style="display:none">
-        <div class="rsvp-pases-label">Pases</div>
-        <div class="rsvp-pases-num" id="rsvp-pases-num">1</div>
-        <div class="rsvp-pases-label" id="rsvp-mesa" style="display:none;margin-top:14px;font-size:14px;opacity:1;color:var(--accent-deep)"></div>
+  <section class="section-paper rsvp" data-flora>
+    <div class="sec-flora" style="background-image:url('bg-mar5.webp');opacity:0.38"></div>
+    <div class="container">
+      <div class="rsvp-card">
+        <!-- Esquinas decorativas -->
+        <svg class="rsvp-corner rsvp-corner--tl" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--gold)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--gold)" opacity=".5"/></svg>
+        <svg class="rsvp-corner rsvp-corner--tr" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--gold)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--gold)" opacity=".5"/></svg>
+        <svg class="rsvp-corner rsvp-corner--bl" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--gold)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--gold)" opacity=".5"/></svg>
+        <svg class="rsvp-corner rsvp-corner--br" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--gold)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--gold)" opacity=".5"/></svg>
+
+        <div class="rsvp-inner">
+          <svg class="rsvp-ornament" viewBox="0 0 320 56" fill="none" aria-hidden="true">
+            <g stroke="var(--gold)" stroke-width=".9" opacity=".8" fill="none">
+              <path d="M18 28 Q50 10 82 28 Q106 42 130 28"/>
+              <path d="M190 28 Q214 42 238 28 Q270 10 302 28"/>
+              <circle cx="160" cy="28" r="5.5"/>
+              <circle cx="160" cy="28" r="2" fill="var(--gold)" stroke="none"/>
+              <path d="M148 28 L154 28" opacity=".5"/>
+              <path d="M166 28 L172 28" opacity=".5"/>
+              <path d="M154 20 Q160 13 166 20" opacity=".55"/>
+              <path d="M154 36 Q160 43 166 36" opacity=".55"/>
+            </g>
+          </svg>
+
+          <div class="eyebrow">Confirmación de asistencia</div>
+          <h2 class="rsvp-title">Tu presencia <em>lo es</em> todo</h2>
+          <p class="rsvp-text">Por favor confírmame tu asistencia antes del <strong>31 de octubre de 2026</strong>. Me hará muy feliz saber que estarás conmigo.</p>
+
+          <p id="rsvp-name-display" style="display:none;font-family:'Pinyon Script',cursive;font-size:clamp(30px,7vw,44px);color:var(--gold-deep);line-height:1.2;margin:18px auto 4px;"></p>
+
+          <div class="rsvp-divider">
+            <svg class="rsvp-divider-heart" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+          </div>
+
+          <p id="rsvp-pases-note" style="display:none"></p>
+
+          <div class="rsvp-pases-display" id="rsvp-pases-display" style="display:none">
+            <div class="rsvp-pases-label">Pases asignados</div>
+            <div class="rsvp-pases-num" id="rsvp-pases-num">1</div>
+          </div>
+          <div class="rsvp-pases-label" id="rsvp-mesa" style="display:none;margin:-14px auto 24px;font-size:13px;color:var(--accent-deep)"></div>
+
+          <div class="rsvp-toggle">
+            <button class="rsvp-toggle-btn" id="btnYes" type="button">¡Ahí estaré!</button>
+            <button class="rsvp-toggle-btn" id="btnNo" type="button">No podré asistir</button>
+          </div>
+
+          <div class="rsvp-fields" id="rsvp-fields" style="display:none"></div>
+
+          <button class="rsvp-btn" id="rsvp-confirm-btn" type="button">
+            <span id="rsvp-btn-text">Confirmar asistencia</span>
+          </button>
+
+          <p id="rsvp-feedback"></p>
+
+          <div class="rsvp-deadline">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"/></svg>
+            Fecha límite · 31 Octubre 2026
+          </div>
+        </div>
       </div>
-      <div class="rsvp-toggle">
-        <button class="rsvp-toggle-btn" id="btnYes" type="button">Asistiré</button>
-        <button class="rsvp-toggle-btn" id="btnNo" type="button">No podré asistir</button>
-      </div>
-      <div class="rsvp-fields" id="rsvp-fields" style="display:none"></div>
-      <button class="rsvp-btn" id="rsvp-confirm-btn" type="button">
-        <span id="rsvp-btn-text">Confirmar asistencia</span>
-      </button>
-      <p id="rsvp-feedback"></p>
-      <div class="rsvp-date">Fecha límite · 31 Octubre 2026</div>
     </div>
   </section>
 
@@ -2121,7 +2128,7 @@ gsap.fromTo('.countdown .eyebrow, .countdown h2, .countdown-sub',{opacity:0,y:14
 })();
 
 // ------ DRESS ------
-gsap.fromTo('.swatch',{opacity:0,scale:.4,y:30},{opacity:1,scale:1,y:0,duration:1.1,stagger:.1,ease:'elastic.out(1,.6)',scrollTrigger:{trigger:'.dress-swatches',start:'top 82%'}});
+if(document.querySelector('.swatch'))gsap.fromTo('.swatch',{opacity:0,scale:.4,y:30},{opacity:1,scale:1,y:0,duration:1.1,stagger:.1,ease:'elastic.out(1,.6)',scrollTrigger:{trigger:'.dress-swatches',start:'top 82%'}});
 gsap.fromTo('.dress .eyebrow, .dress h2, .dress-sub, .dress-col-head, .dress-note',{opacity:0,y:14},{opacity:1,y:0,duration:.9,stagger:.08,scrollTrigger:{trigger:'.dress',start:'top 78%'}});
 gsap.fromTo('.garment-item',{opacity:0,y:18},{opacity:1,y:0,duration:.7,stagger:.09,ease:'power2.out',scrollTrigger:{trigger:'.dress-cols',start:'top 82%'}});
 
@@ -2339,6 +2346,7 @@ if(rsvpBtn && !('ontouchstart' in window)){
     noteEl.style.display = 'block';
     pasesNumEl.textContent = urlPases;
     pasesDisplayEl.style.display = 'flex';
+    var nmEl=document.getElementById('rsvp-name-display'); if(urlPara&&nmEl){nmEl.textContent=urlPara;nmEl.style.display='block';}
     var mesaQ = (params.get('mesa')||'').trim(); if(mesaQ){var me=document.getElementById('rsvp-mesa'); me.textContent='Mesa asignada · '+mesaQ; me.style.display='block';}
   }
 
@@ -2747,6 +2755,89 @@ window.addEventListener('resize',()=>ScrollTrigger.refresh());
   ['pointerdown','touchend','click','keydown'].forEach(function(ev){
     document.addEventListener(ev,onGesture,{capture:true,passive:true});
   });
+})();
+</script>
+<script>
+(function(){
+  (function(){
+    var sec=document.getElementById('regalos'),rain=document.getElementById('envRain'),
+        btn=document.getElementById('envGift'),body=document.getElementById('envGiftBody'),
+        hint=document.getElementById('envGiftHint');
+    if(!sec||!rain||!btn)return;
+    var raining=true,landed=false,spawnCall=null,alive=0;
+    var MAX_ALIVE=18;
+
+    function makeEnvelope(){
+      if(alive>=MAX_ALIVE)return;
+      alive++;
+      var el=document.createElementNS('http://www.w3.org/2000/svg','svg');
+      el.setAttribute('viewBox','0 0 34 24');
+      el.setAttribute('class','jv-rain-item');
+      var w=16+Math.random()*16;
+      el.style.width=w+'px';el.style.height=(w*24/34)+'px';
+      el.style.left=(Math.random()*100)+'%';
+      el.innerHTML='<rect x="1" y="1" width="32" height="22" rx="2.5" fill="#eef0f6" stroke="#13178b" stroke-width="1.2"/>'+
+                   '<path d="M1 1 L17 13 L33 1" fill="none" stroke="#13178b" stroke-width="1.2" stroke-linejoin="round"/>';
+      rain.appendChild(el);
+      var H=sec.offsetHeight+80,dur=5+Math.random()*4;
+      function kill(){if(el.parentNode){el.remove();alive--;}}
+      gsap.timeline({onComplete:kill})
+        .fromTo(el,{y:-46,x:0,rotation:(Math.random()-.5)*50,opacity:0},
+                   {y:H,x:(Math.random()-.5)*70,rotation:(Math.random()-.5)*160,
+                    duration:dur,ease:'none'},0)
+        .fromTo(el,{opacity:0},{opacity:.75,duration:dur*.18,ease:'power1.out'},0)
+        .to(el,{opacity:0,duration:dur*.25,ease:'power1.in'},dur*.75);
+    }
+
+    /* Spawn por el ticker de GSAP (no setInterval): se pausa junto con la
+       animación si la pestaña pasa a segundo plano, evitando acumulación. */
+    function scheduleSpawn(){
+      spawnCall=gsap.delayedCall(.52,function(){
+        if(!raining)return;
+        makeEnvelope();
+        scheduleSpawn();
+      });
+    }
+    function startRain(){
+      for(var i=0;i<7;i++)gsap.delayedCall(i*.26,makeEnvelope);
+      scheduleSpawn();
+    }
+    function stopRain(){
+      raining=false;
+      if(spawnCall)spawnCall.kill();
+      gsap.to(rain,{opacity:0,duration:1.1,ease:'power2.out',
+        onComplete:function(){rain.innerHTML='';alive=0;}});
+    }
+
+    function land(){
+      if(landed)return;landed=true;
+      stopRain();
+      /* Un sobre se detiene: cae desde arriba y se asienta con rebote */
+      gsap.fromTo(btn,
+        {opacity:0,y:-150,rotation:-12,scale:.82},
+        {opacity:1,y:0,rotation:0,scale:1,duration:1.15,ease:'back.out(1.5)',
+         onComplete:function(){
+           if(body)body.classList.add('landed');
+           if(hint)hint.classList.add('show');
+         }});
+    }
+
+    startRain();
+    /* Aterriza cuando la sección queda centrada. Se usa 55% en vez de 'center'
+       porque el reveal genérico desplaza las secciones aún no visibles 28px,
+       y con 'center center' exacto el umbral queda fuera de alcance. */
+    ScrollTrigger.create({trigger:sec,start:'center 55%',once:true,onEnter:land,onEnterBack:land});
+
+    function toggle(e){
+      if(e)e.preventDefault();
+      if(!landed)return;
+      var open=btn.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+      if(open&&body)body.classList.remove('landed');
+      ScrollTrigger.refresh();
+    }
+    btn.addEventListener('click',toggle);
+  })();
 })();
 </script>
 </body>
