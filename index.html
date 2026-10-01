@@ -1285,7 +1285,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 /* ===== ROMY v3 — tema marino + plata satinada ===== */
 body{background:#08103F;color:var(--ink)}
 .sec-flora{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%)!important;mask-image:linear-gradient(to bottom,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%)!important;-webkit-mask-composite:source-over!important;mask-composite:add!important}
-.sec-flora::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 50%,rgba(8,16,63,.72),rgba(8,16,63,.25) 70%,transparent)}
+.sec-flora::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 50%,rgba(8,16,63,.88),rgba(8,16,63,.55) 65%,rgba(8,16,63,.2))}
 .seam{background:#08103F!important;height:0!important}
 .section-bg::after,.section-surface::after,.section-paper::after{display:none!important}
 .mono-wm{opacity:.05!important;color:#fff!important}
@@ -1325,6 +1325,12 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 .itv3-ev{color:#ECEDF4!important}.itv3-sub{color:#D6D8EA!important;font-size:16px!important}
 .hero-content{transform:translateY(15vh)}
 .hero-bg{object-position:center 18%!important}
+.dc-figures{gap:14px!important;max-width:360px!important;align-items:stretch!important}
+.dc-sep-line{display:none!important}
+.dc-fig{background:linear-gradient(145deg,#b9bbc8 0%,#f6f6fa 28%,#d5d6e0 55%,#eeeef4 78%,#a9abba 100%)!important;border:1px solid rgba(255,255,255,.85);border-radius:16px;padding:18px 8px 16px;box-shadow:0 14px 34px -14px rgba(0,0,0,.65),inset 0 1px 0 #fff,inset 0 -1px 0 rgba(120,123,145,.5)}
+.dc-fig img{filter:drop-shadow(0 6px 10px rgba(8,16,63,.3))!important;height:200px!important}
+.dc-fig-label{background:none!important;-webkit-text-fill-color:#08103F!important;color:#08103F!important;animation:none!important;filter:none!important}
+.dc-fig-sub{color:#1c2466!important}
 </style>
 </head>
 <body>
@@ -1417,7 +1423,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 
   <!-- VERSO -->
   <section class="section-surface" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-navy1.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy1.webp');opacity:.6"></div>
     <div class="container">
       <div class="verse-wrap">
         <svg class="verse-ornament" viewBox="0 0 360 80" fill="none" aria-hidden="true">
@@ -1466,7 +1472,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 
   <!-- HISTORIA -->
   <section class="section-surface" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-navy3.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy3.webp');opacity:.6"></div>
     <span class="mono-wm" aria-hidden="true">Romy</span>
     <div class="container">
       <div class="story">
@@ -1493,7 +1499,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 
   <!-- FAMILIA -->
   <section class="section-paper familia" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-navy2.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy2.webp');opacity:.6"></div>
     <div class="container">
       <svg class="familia-ornament" viewBox="0 0 280 50" fill="none" aria-hidden="true">
         <g stroke="var(--gold)" stroke-width=".8" opacity=".7" fill="none">
@@ -1534,7 +1540,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 
   <!-- UBICACIONES -->
   <section class="section-paper locs" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-navy3.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy3.webp');opacity:.6"></div>
     <div class="container">
       <div style="text-align:center">
         <div class="eyebrow">Acompáñanos</div>
@@ -1596,7 +1602,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 
   <!-- COUNTDOWN -->
   <section class="section-surface countdown" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-navy4.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy4.webp');opacity:.6"></div>
     <div class="container">
       <div class="eyebrow">Cuenta regresiva</div>
       <h2>Falta <em>muy</em> poco</h2>
@@ -1616,7 +1622,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 
   <!-- ITINERARIO -->
   <section class="section-paper itinerary" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-navy5.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy5.webp');opacity:.6"></div>
     <span class="mono-wm" aria-hidden="true">Romy</span>
     <div class="container">
       <div class="eyebrow">El Gran Día</div>
@@ -1654,7 +1660,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 
   <!-- DRESS CODE -->
   <section class="section-bg dress" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-navy1.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy1.webp');opacity:.6"></div>
     <div class="container">
       <div class="eyebrow">Código de vestimenta</div>
       <h2>Dress <em>Code</em></h2>
@@ -1682,7 +1688,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 
   <!-- GALLERY — RUEDA DE LA FORTUNA -->
   <section class="section-surface gallery" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-navy2.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy2.webp');opacity:.6"></div>
     <div class="container gallery-head">
       <div class="eyebrow">Momentos</div>
       <h2>Del camino <em>que</em> nos trajo aquí</h2>
@@ -1722,10 +1728,10 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 
   <!-- KIDS POLICY -->
   <section class="section-paper kids-policy" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-navy5.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy5.webp');opacity:.6"></div>
     <div class="container kids-inner">
       <div class="eyebrow">Una nota con cariño</div>
-      <h2>Invitación <em>personal</em> e intransferible</h2>
+      <h2>Invitación <em>intransferible</em></h2>
       <div class="kids-icon">
         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" stroke="var(--gold)" stroke-width="1.2" stroke-linecap="round">
           <circle cx="36" cy="36" r="28" style="--len:176"/>
@@ -1745,7 +1751,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
   <!-- GIFTS -->
   <section class="section-surface gifts" id="regalos" data-flora>
     <div class="jv-rain" id="envRain" aria-hidden="true"></div>
-    <div class="sec-flora" style="background-image:url('bg-navy3.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy3.webp');opacity:.6"></div>
     <div class="container">
       <div class="gifts-head">
         <div class="eyebrow">Tu presencia es mi mejor regalo</div>
@@ -1808,7 +1814,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 
   <!-- ALBUM QR -->
   <section class="section-bg album" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-navy4.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy4.webp');opacity:.6"></div>
     <div class="container album-inner">
       <div class="eyebrow">Álbum compartido</div>
       <h2>Comparte <em>tus</em> fotos con nosotros</h2>
@@ -1826,7 +1832,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 
   <!-- RSVP -->
   <section class="section-paper rsvp" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-navy5.webp');opacity:1"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy5.webp');opacity:.6"></div>
     <div class="container">
       <div class="rsvp-card">
         <!-- Esquinas decorativas -->
