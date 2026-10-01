@@ -34,21 +34,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
 :root{
-  --bg:#F5F3EE;
-  --surface:#EAE6DC;
-  --paper:#FFFFFF;
-  --accent:#13178b;
-  --accent-soft:#3A3FA8;
-  --accent-deep:#0A0C4E;
+  --bg:#08103F;
+  --surface:#08103F;
+  --paper:#08103F;
+  --accent:#D6D8EA;
+  --accent-soft:#B9BCD6;
+  --accent-deep:#EEEEF5;
   --navy:#0A0C4E;
   --navy-mid:#13178b;
-  --gold:#C0C0C0;
+  --gold:#D9DAE4;
   --gold-soft:#ECECF0;
-  --gold-deep:#5E5E6A;
-  --rose:#C0C0C0;
+  --gold-deep:#D2D3DF;
+  --rose:#D9DAE4;
   --rose-soft:#ECECF0;
-  --ink:#0A0C4E;
-  --ink-soft:#3D466A;
+  --ink:#ECEDF4;
+  --ink-soft:#C9CBDD;
   --hair:color-mix(in srgb, var(--accent-deep) 14%, transparent);
   --hair-gold:color-mix(in srgb, var(--gold-deep) 22%, transparent);
   --display:'Playfair Display',Georgia,serif;
@@ -1155,8 +1155,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 @media (prefers-reduced-motion:reduce){.bfly,.lightfall{display:none}}
 
 /* ===== ROMY v2 ===== */
-:root{--silver-grad:linear-gradient(110deg,#3a3a48 0%,#6d6d7c 20%,#a8a8b8 34%,#5a5a69 50%,#44444f 64%,#8e8e9e 80%,#3f3f4b 100%);
---silver-grad-lt:linear-gradient(110deg,#b9b9c6 0%,#ffffff 25%,#cfcfda 45%,#f6f6fa 65%,#a6a6b4 85%,#e9e9f0 100%)}
+:root{--silver-grad:linear-gradient(110deg,#c2c3cf 0%,#f3f3f7 22%,#d2d3dd 42%,#aeb0be 58%,#ecedf2 78%,#c6c7d2 100%);
+--silver-grad-lt:linear-gradient(110deg,#c2c3cf 0%,#f3f3f7 22%,#d2d3dd 42%,#aeb0be 58%,#ecedf2 78%,#c6c7d2 100%)}
 @keyframes silverFlow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 .sec-flora{position:absolute;inset:-2px;z-index:-1;background-size:cover;background-position:center;background-repeat:no-repeat;pointer-events:none;
@@ -1164,7 +1164,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
   -webkit-mask-composite:destination-in;mask-image:linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 16%,#000 84%,transparent 100%);mask-composite:intersect}
 /* plata metálica */
 .script,h2 em,h1 em,.hair-word span,.familia-sub,.countdown-sub,.gallery-sub,.itinerary-sub,.loc-time,.familia-group-title,.familia-special-title,.eyebrow,.verse-sig,.story-initials,.cd-lbl,.rsvp-title em,.jv-title,.dc-fig-label,.itv3-time,.date-roman,.loc-type,.rsvp-deadline,.kids-text[style*="script"]{
-  background:var(--silver-grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#6e6e7b;animation:silverFlow 7s ease-in-out infinite;filter:drop-shadow(0 1px 0 rgba(255,255,255,.7))}
+  background:var(--silver-grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#6e6e7b;animation:silverFlow 7s ease-in-out infinite;filter:drop-shadow(0 1px 2px rgba(0,0,0,.45))}
 .hero .word,.hero-eyebrow,.hero-date span,.date-num,.date-eyebrow,.date-lbl,.date-h em,.footer-names,.footer-date,.hero-scroll,.loader-mono{
   background:var(--silver-grad-lt);background-size:220% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#e6e6ee;animation:silverFlow 6s ease-in-out infinite;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
 /* dress code (fabiola) */
@@ -1281,6 +1281,50 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 .bfly.on-light svg{filter:drop-shadow(0 1px 3px rgba(10,12,78,.35))}
 .bfly.on-light .w1{fill:#13178b;stroke:#9DA3E8;stroke-width:.6}.bfly.on-light .w2{fill:#3A3FA8}.bfly.on-light .bd{fill:#0A0C4E}
 .bfly.alt.on-light .w1{fill:#3F4FC8;stroke:#B4BAF0}.bfly.alt.on-light .w2{fill:#5A68D6}.bfly.alt.on-light .bd{fill:#1B2080}
+
+/* ===== ROMY v3 — tema marino + plata satinada ===== */
+body{background:#08103F;color:var(--ink)}
+.sec-flora{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%)!important;mask-image:linear-gradient(to bottom,transparent 0,#000 90px,#000 calc(100% - 90px),transparent 100%)!important;-webkit-mask-composite:source-over!important;mask-composite:add!important}
+.sec-flora::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 50%,rgba(8,16,63,.72),rgba(8,16,63,.25) 70%,transparent)}
+.seam{background:#08103F!important;height:0!important}
+.section-bg::after,.section-surface::after,.section-paper::after{display:none!important}
+.mono-wm{opacity:.05!important;color:#fff!important}
+.rsvp-text,.dc-note,.gifts-sub,.story-body p,.kids-text,.album-text,.verse-text,.loc-addr{color:#E3E4EE!important}
+.loc-card,.kids-inner{background:rgba(14,22,84,.62)!important;border:1px solid rgba(220,222,236,.32)!important;box-shadow:0 18px 44px -18px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.08)!important;backdrop-filter:blur(3px)}
+.kids-inner{padding:34px 22px;border-radius:6px}
+.rsvp-card{background:rgba(12,19,78,.74)!important;border-color:rgba(220,222,236,.4)!important;box-shadow:0 24px 64px rgba(0,0,0,.45)!important}
+.rsvp-card::before{border-color:rgba(220,222,236,.2)!important}
+.rsvp-pases-display{background:rgba(255,255,255,.07)!important;border-color:rgba(220,222,236,.35)!important}
+.rsvp-toggle-btn{background:rgba(255,255,255,.06)!important;border-color:rgba(220,222,236,.4)!important;color:#ECEDF4!important}
+.rsvp-toggle-btn.rsvp-toggle-selected-yes,.rsvp-toggle-btn.rsvp-toggle-selected-no{background:linear-gradient(135deg,#c2c3cf,#f3f3f7 50%,#b4b6c4)!important;color:#08103F!important;border-color:#fff!important}
+.rsvp-field-input,.rsvp-input{background:rgba(255,255,255,.92)!important;color:#08103F!important;border-color:rgba(220,222,236,.6)!important;font-size:16px!important}
+.rsvp-field-label{color:#D6D8EA!important}
+.rsvp-btn,.loc-btn,.gift-btn{background:linear-gradient(135deg,#b9bbc8 0%,#f5f5f9 45%,#c9cad6 70%,#a9abba 100%)!important;color:#08103F!important;border-color:rgba(255,255,255,.7)!important;-webkit-text-fill-color:#08103F}
+.rsvp-btn *{color:#08103F!important;-webkit-text-fill-color:#08103F}
+.rsvp-btn::before,.rsvp-btn::after,.loc-btn::before{display:none!important}
+#rsvp-feedback,#rsvp-name-display,#rsvp-mesa,.rsvp-pases-num{color:#ECEDF4!important}
+.cd-block{background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04))!important;border:1px solid rgba(225,227,240,.45)!important;backdrop-filter:blur(4px)}
+.dc-figures{position:relative}
+.dc-fig img{filter:drop-shadow(0 0 1px rgba(255,255,255,.9)) drop-shadow(0 0 14px rgba(200,205,235,.35))!important}
+.dc-fig{background:radial-gradient(ellipse at 50% 45%,rgba(230,232,245,.20),transparent 68%)}
+.dc-sep-line{background:linear-gradient(180deg,transparent,rgba(225,227,240,.5) 18%,rgba(225,227,240,.5) 82%,transparent)!important}
+.dc-fig-sub{color:#D6D8EA!important}
+.dc-reserved{max-width:330px;margin:26px auto 0;padding:14px 18px;border:1px solid rgba(225,227,240,.4);border-radius:10px;font-family:var(--sans);font-size:15px;font-weight:600;line-height:1.5;letter-spacing:.02em;color:#ECEDF4;background:rgba(255,255,255,.05)}
+.wheel-hint,.env-tap-hint,.jv-tap-hint{color:#D6D8EA!important}
+.jv-title{font-size:clamp(38px,11vw,48px)!important}
+.jv-desc{font-size:21px!important;font-weight:600!important;color:#ECEDF4!important;opacity:1!important;max-width:330px!important;line-height:1.6!important}
+.jv-tap-hint{font-size:16px!important;font-weight:600}
+.jv-mailbox-icon{color:#E3E4EE!important;width:52px!important;height:52px!important}
+.jv-interactive.open .jv-open-content{max-height:420px!important}
+.album-qr{background:#fff}
+.lightfall{background:#fff}
+/* mariposas premium plata */
+.bfly svg{filter:drop-shadow(0 0 5px rgba(235,238,255,.75)) drop-shadow(0 2px 4px rgba(0,0,0,.45))!important;overflow:visible}
+.bfly .wl,.bfly .wr{animation-duration:.42s!important}
+footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
+.itv3-ev{color:#ECEDF4!important}.itv3-sub{color:#D6D8EA!important;font-size:16px!important}
+.hero-content{transform:translateY(15vh)}
+.hero-bg{object-position:center 18%!important}
 </style>
 </head>
 <body>
@@ -1373,7 +1417,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 
   <!-- VERSO -->
   <section class="section-surface" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-mar1.webp');opacity:0.3"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy1.webp');opacity:1"></div>
     <div class="container">
       <div class="verse-wrap">
         <svg class="verse-ornament" viewBox="0 0 360 80" fill="none" aria-hidden="true">
@@ -1421,7 +1465,8 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
   <div class="seam" style="--from:#0A0C4E;--to:var(--surface)" aria-hidden="true"></div>
 
   <!-- HISTORIA -->
-  <section class="section-surface">
+  <section class="section-surface" data-flora>
+    <div class="sec-flora" style="background-image:url('bg-navy3.webp');opacity:1"></div>
     <span class="mono-wm" aria-hidden="true">Romy</span>
     <div class="container">
       <div class="story">
@@ -1448,7 +1493,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 
   <!-- FAMILIA -->
   <section class="section-paper familia" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-mar2.webp');opacity:0.35"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy2.webp');opacity:1"></div>
     <div class="container">
       <svg class="familia-ornament" viewBox="0 0 280 50" fill="none" aria-hidden="true">
         <g stroke="var(--gold)" stroke-width=".8" opacity=".7" fill="none">
@@ -1489,7 +1534,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 
   <!-- UBICACIONES -->
   <section class="section-paper locs" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-mar4.webp');opacity:0.3"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy3.webp');opacity:1"></div>
     <div class="container">
       <div style="text-align:center">
         <div class="eyebrow">Acompáñanos</div>
@@ -1514,8 +1559,8 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
               <path d="M22 8 L22 16 M22 28 L22 36 M8 22 L16 22 M28 22 L36 22" opacity=".6"/>
             </g>
           </svg>
-          <div class="loc-type">Ceremonia religiosa</div>
-          <div class="loc-name">Misa de<br>Acción de Gracias</div>
+          <div class="loc-type">Misa de acción de gracias</div>
+          <div class="loc-name">Parroquia<br>San Isidro Labrador</div>
           <div class="loc-time">5:30 p.m.</div>
           <div class="loc-addr">Estado de México</div>
           <a class="loc-btn" href="https://maps.app.goo.gl/as5kJHjXnv9CsT128" target="_blank" rel="noopener">Cómo llegar</a>
@@ -1537,7 +1582,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
             </g>
           </svg>
           <div class="loc-type">Recepción</div>
-          <div class="loc-name">Salón<br>de eventos</div>
+          <div class="loc-name">Salón de eventos<br>Fiesta Latina</div>
           <div class="loc-time">8:30 p.m.</div>
           <div class="loc-addr">Estado de México</div>
           <a class="loc-btn" href="https://maps.app.goo.gl/3gmkjwVN5x7Hyjei7" target="_blank" rel="noopener">Cómo llegar</a>
@@ -1551,7 +1596,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 
   <!-- COUNTDOWN -->
   <section class="section-surface countdown" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-mar5.webp');opacity:0.4"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy4.webp');opacity:1"></div>
     <div class="container">
       <div class="eyebrow">Cuenta regresiva</div>
       <h2>Falta <em>muy</em> poco</h2>
@@ -1571,7 +1616,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 
   <!-- ITINERARIO -->
   <section class="section-paper itinerary" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-mar3.webp');opacity:0.28"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy5.webp');opacity:1"></div>
     <span class="mono-wm" aria-hidden="true">Romy</span>
     <div class="container">
       <div class="eyebrow">El Gran Día</div>
@@ -1585,13 +1630,14 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
           <div class="itv3-gem"></div>
           <div class="itv3-time">5:30 pm</div>
           <div class="itv3-ev">Misa</div>
-          <div class="itv3-sub">Acción de gracias</div>
+          <div class="itv3-sub">Parroquia San Isidro Labrador</div>
         </div>
 
         <div class="itv3-item">
           <div class="itv3-gem itv3-gem-navy"></div>
           <div class="itv3-time">8:00 pm</div>
           <div class="itv3-ev">Recepción</div>
+          <div class="itv3-sub">Salón de eventos Fiesta Latina</div>
         </div>
 
         <div class="itv3-item">
@@ -1608,7 +1654,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 
   <!-- DRESS CODE -->
   <section class="section-bg dress" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-mar1.webp');opacity:0.32"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy1.webp');opacity:1"></div>
     <div class="container">
       <div class="eyebrow">Código de vestimenta</div>
       <h2>Dress <em>Code</em></h2>
@@ -1627,6 +1673,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
           <span class="dc-fig-sub">vestido largo</span>
         </div>
       </div>
+      <p class="dc-reserved">El azul marino y el plateado quedan reservados para la quinceañera</p>
     </div>
   </section>
 
@@ -1635,7 +1682,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 
   <!-- GALLERY — RUEDA DE LA FORTUNA -->
   <section class="section-surface gallery" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-mar2.webp');opacity:0.3"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy2.webp');opacity:1"></div>
     <div class="container gallery-head">
       <div class="eyebrow">Momentos</div>
       <h2>Del camino <em>que</em> nos trajo aquí</h2>
@@ -1674,7 +1721,8 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
   <div class="seam" style="--from:var(--surface);--to:var(--paper)" aria-hidden="true"></div>
 
   <!-- KIDS POLICY -->
-  <section class="section-paper kids-policy">
+  <section class="section-paper kids-policy" data-flora>
+    <div class="sec-flora" style="background-image:url('bg-navy5.webp');opacity:1"></div>
     <div class="container kids-inner">
       <div class="eyebrow">Una nota con cariño</div>
       <h2>Invitación <em>personal</em> e intransferible</h2>
@@ -1686,7 +1734,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
           <circle cx="36" cy="46" r="2" style="--len:14" fill="var(--gold)"/>
         </svg>
       </div>
-      <p class="kids-text">Este momento ha sido concebido para compartirse con quienes han formado parte esencial de mi historia. Por ello, la invitación contempla únicamente a la persona mencionada en ella y es intransferible. Agradecemos tu comprensión y tu compañía en un día tan especial y único para mí.</p>
+      <p class="kids-text">Este momento ha sido concebido para compartirse con quienes han formado parte esencial de mi historia. Por ello, esta invitación es intransferible. Agradecemos tu comprensión y tu compañía en un día tan especial y único para mí.</p>
       <p class="kids-text" style="margin-top:18px;font-family:var(--script);font-size:32px;color:var(--gold);line-height:1.2">Con cariño, Romy</p>
     </div>
   </section>
@@ -1697,7 +1745,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
   <!-- GIFTS -->
   <section class="section-surface gifts" id="regalos" data-flora>
     <div class="jv-rain" id="envRain" aria-hidden="true"></div>
-    <div class="sec-flora" style="background-image:url('bg-mar4.webp');opacity:0.35"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy3.webp');opacity:1"></div>
     <div class="container">
       <div class="gifts-head">
         <div class="eyebrow">Tu presencia es mi mejor regalo</div>
@@ -1760,7 +1808,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 
   <!-- ALBUM QR -->
   <section class="section-bg album" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-mar3.webp');opacity:0.28"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy4.webp');opacity:1"></div>
     <div class="container album-inner">
       <div class="eyebrow">Álbum compartido</div>
       <h2>Comparte <em>tus</em> fotos con nosotros</h2>
@@ -1778,7 +1826,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
 
   <!-- RSVP -->
   <section class="section-paper rsvp" data-flora>
-    <div class="sec-flora" style="background-image:url('bg-mar5.webp');opacity:0.38"></div>
+    <div class="sec-flora" style="background-image:url('bg-navy5.webp');opacity:1"></div>
     <div class="container">
       <div class="rsvp-card">
         <!-- Esquinas decorativas -->
@@ -1853,7 +1901,7 @@ section[data-flora]{position:relative;isolation:isolate;overflow:hidden}
         </g>
       </svg>
       <div class="footer-names">Romy</div>
-      <div class="footer-date">XXVIII · XI · 2026 · Estado de México</div>
+      <div class="footer-date">28 · 11 · 2026 · Estado de México</div>
       <div class="footer-credit">
         <span class="credit-label">Invitación diseñada por</span>
         <a href="https://www.instagram.com/elysium.invitaciones/" target="_blank" rel="noopener" class="credit-handle">
@@ -2691,12 +2739,19 @@ window.addEventListener('resize',()=>ScrollTrigger.refresh());
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var cols=[['#ECECF0','#C0C0C0'],['#FFFFFF','#B8B8C8'],['#E6E6F2','#9A9AB0']];
   function bfly(){
-    var c=cols[Math.random()*cols.length|0], sz=18+Math.random()*16, el=document.createElement('div');
+    var c=cols[Math.random()*cols.length|0], sz=26+Math.random()*20, el=document.createElement('div');
     el.className='bfly'+(bfly._n=(bfly._n||0)+1,bfly._n%2?' alt':'');
-    el.innerHTML='<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 40 40"><defs><linearGradient id="g'+Math.random().toString(36).slice(2,7)+'" x1="0" y1="0" x2="1" y2="1"></linearGradient></defs>'+
-      '<g class="wl"><path d="M20 20 C12 4 0 6 3 16 C5 22 14 22 20 20Z" class="w1"/><path d="M20 21 C12 24 5 34 11 35 C16 36 19 28 20 21Z" class="w2"/></g>'+
-      '<g class="wr"><path d="M20 20 C28 4 40 6 37 16 C35 22 26 22 20 20Z" class="w1"/><path d="M20 21 C28 24 35 34 29 35 C24 36 21 28 20 21Z" class="w2"/></g>'+
-      '<rect x="19.2" y="13" width="1.6" height="16" rx=".8" class="bd"/></svg>';
+    var gid='sg'+(bfly._n||0);
+    el.innerHTML='<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 48 48"><defs><linearGradient id="'+gid+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#c9cbd8"/><stop offset=".6" stop-color="#f4f4f9"/><stop offset="1" stop-color="#9fa2b4"/></linearGradient></defs>'+
+      ['wl','wr'].map(function(c){var f=c==='wr'?' transform="translate(48,0) scale(-1,1)"':'';
+        return '<g class="'+c+'"><g'+f+'>'+
+        '<path d="M24 22 C20 10 10 2 4 5 C0 8 2 17 8 21 C13 24 19 24 24 22Z" fill="url(#'+gid+')" stroke="#fff" stroke-width=".5"/>'+
+        '<path d="M24 23 C18 24 9 27 8 33 C7 38 12 40 16 37 C17 41 15 45 13 47 C18 45 21 39 22 33 C23 29 24 26 24 23Z" fill="url(#'+gid+')" stroke="#fff" stroke-width=".5" opacity=".95"/>'+
+        '<path d="M23 21 C18 15 12 9 6 7 M23 21.5 C17 19 10 17 5 13 M22 24 C17 27 12 30 10 34 M22.5 25 C20 30 18 34 16 36" fill="none" stroke="#7f8296" stroke-width=".45" opacity=".8"/>'+
+        '<circle cx="7.5" cy="9" r="1.1" fill="#fff"/><circle cx="11" cy="34" r=".9" fill="#fff"/>'+
+        '</g></g>';}).join('')+
+      '<path d="M24 14 C25 18 25 30 24 35 C23 30 23 18 24 14Z" fill="#eef0f8" stroke="#8b8ea2" stroke-width=".4"/>'+
+      '<path d="M24 15 C22 11 20 9 18.5 8.5 M24 15 C26 11 28 9 29.5 8.5" fill="none" stroke="#e6e8f4" stroke-width=".5" stroke-linecap="round"/></svg>';
     document.body.appendChild(el);
     var W=innerWidth,H=innerHeight,x0=Math.random()*W,dur=14+Math.random()*10;
     var tl=gsap.timeline({onComplete:function(){el.remove();setTimeout(bfly,1500+Math.random()*3000)}});
@@ -2713,15 +2768,7 @@ window.addEventListener('resize',()=>ScrollTrigger.refresh());
     gsap.fromTo(el,{y:0,opacity:0},{y:innerHeight+40,opacity:1,duration:d,ease:'none',onComplete:function(){el.remove();light()}});
     gsap.to(el,{opacity:.35,duration:.6+Math.random(),repeat:-1,yoyo:true,ease:'sine.inOut',delay:1});
   }
-  setInterval(function(){
-    document.querySelectorAll('.bfly').forEach(function(b){
-      var r=b.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2;
-      if(x<0||y<0||x>innerWidth||y>innerHeight) return;
-      var e=document.elementFromPoint(x,y);
-      var dark=!!(e&&e.closest('.hero,.date-hero,footer,.wheel-item,.cd-block,.rsvp-pases-display,#envelope-screen,#loader,.lightbox,[class*="lightbox"]'));
-      b.classList.toggle('on-light',!dark);
-    });
-  },180);
+
   var started=false;
   function go(){ if(started) return; started=true;
     var nb=innerWidth<600?5:8, nl=innerWidth<600?14:24;
