@@ -1358,6 +1358,14 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 .footer-names{font-size:clamp(64px,17vw,90px)!important}
 .footer-date{font-size:clamp(17px,4.6vw,20px)!important;letter-spacing:.22em!important;font-weight:600!important;line-height:1.6!important}
 .verse-sig::before,.verse-sig::after{display:none!important}
+
+/* carrusel enfoque plano (infancia) */
+.fx-stage{position:relative;height:330px;margin:34px auto 0;max-width:900px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.fx-card{position:absolute;left:50%;top:50%;width:200px;height:280px;margin:-140px 0 0 -100px;border-radius:18px;overflow:hidden;border:2px solid rgba(230,232,245,.6);box-shadow:0 18px 40px -14px rgba(0,0,0,.75);will-change:transform,filter}
+.fx-card img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.fx-dots{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:6px 30px 0}
+.fx-dots i{width:6px;height:6px;border-radius:50%;background:rgba(220,222,236,.3);transition:all .5s ease}
+.fx-dots i.on{width:18px;border-radius:3px;background:#ECEDF4}
 </style>
 </head>
 <body>
@@ -1751,29 +1759,9 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
     <div class="gallery-head" style="margin-top:70px;margin-bottom:0">
       <div class="gallery-sub">mi infancia</div>
     </div>
-    <div class="wheel-stage" id="ws2">
-      <div class="wheel" id="wheel2">
-        <div class="wheel-item"><img src="foto23.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto24.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto25.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto26.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto27.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto28.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto29.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto30.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto31.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto32.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto33.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto34.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto35.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto36.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto37.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto38.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto39.jpg" alt="Romy de niña" decoding="async"></div>
-        <div class="wheel-item"><img src="foto40.jpg" alt="Romy de niña" decoding="async"></div>
-      </div>
-    </div>
-    <p class="wheel-hint">Arrastra para girar</p>
+    <div class="fx-stage" id="fx2"><div class="fx-card"><img src="foto23.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto24.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto25.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto26.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto27.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto28.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto29.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto30.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto31.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto32.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto33.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto34.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto35.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto36.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto37.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto38.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto39.jpg" alt="Romy de niña" decoding="async"></div><div class="fx-card"><img src="foto40.jpg" alt="Romy de niña" decoding="async"></div></div>
+    <div class="fx-dots" id="fx2dots"></div>
+    <p class="wheel-hint">Desliza para ver más</p>
   </section>
 
   <!-- DIVIDER: surface → paper -->
@@ -2368,7 +2356,7 @@ function initWheel(ring,stageSel){
   gsap.fromTo(cards,{opacity:0,scale:.4},{opacity:1,scale:1,duration:1.0,stagger:.07,ease:'back.out(1.4)',scrollTrigger:{trigger:stageSel,start:'top 80%'}});
 }
 initWheel(document.getElementById('wheel'),'#ws1');
-initWheel(document.getElementById('wheel2'),'#ws2');
+
 gsap.fromTo('.gallery-head > *',{opacity:0,y:18},{opacity:1,y:0,duration:1,stagger:.1,scrollTrigger:{trigger:'.gallery-head',start:'top 80%'}});
 gsap.fromTo('.wheel-hint',{opacity:0,y:8},{opacity:.72,y:0,duration:.9,scrollTrigger:{trigger:'.wheel-hint',start:'top 92%'}});
 
@@ -2915,7 +2903,7 @@ window.addEventListener('resize',()=>ScrollTrigger.refresh());
   upd(); setInterval(upd,1000);
 
   if(window.gsap && window.ScrollTrigger){
-    document.querySelectorAll('.wheel-stage').forEach(function(st){gsap.fromTo(st,{scale:.72},{scale:1.18,ease:'none',scrollTrigger:{trigger:st,start:'top bottom',end:'bottom top',scrub:.6}});});
+    document.querySelectorAll('.wheel-stage,.fx-stage').forEach(function(st){gsap.fromTo(st,{scale:.72},{scale:1.18,ease:'none',scrollTrigger:{trigger:st,start:'top bottom',end:'bottom top',scrub:.6}});});
   }
 
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -3089,6 +3077,32 @@ window.addEventListener('resize',()=>ScrollTrigger.refresh());
     }
     btn.addEventListener('click',toggle);
   })();
+})();
+</script>
+<script>
+/* carrusel enfoque plano — movimiento suave y automático (sentido opuesto a la rueda) */
+(function(){
+  var st=document.getElementById('fx2'); if(!st) return;
+  var cards=[].slice.call(st.children), n=cards.length, dw=document.getElementById('fx2dots');
+  dw.innerHTML=cards.map(function(){return '<i></i>'}).join(''); var dots=[].slice.call(dw.children);
+  var pos=0, target=0, drag=false, sx=0, sp=0, last=Date.now(), GAP=118;
+  function wrap(k){k=((k%n)+n)%n; return k>n/2?k-n:k;}
+  function render(){
+    cards.forEach(function(el,i){
+      var k=wrap(i-pos), a=Math.min(Math.abs(k),3);
+      el.style.transform='translateX('+(k*GAP)+'px) scale('+(1-a*.3)+')';
+      el.style.filter='blur('+(a*2)+'px) brightness('+(1-a*.28)+')';
+      el.style.opacity=a>2.6?0:1-a*.22; el.style.zIndex=100-Math.round(a*10);
+    });
+    var c=((Math.round(pos)%n)+n)%n; dots.forEach(function(d,i){d.className=i===c?'on':''});
+  }
+  function loop(){ if(!drag){ pos+=(target-pos)*0.06; } render(); requestAnimationFrame(loop); }
+  loop();
+  setInterval(function(){ if(!drag && Date.now()-last>2500) target+=1; },3400);
+  st.addEventListener('pointerdown',function(e){drag=true;sx=e.clientX;sp=pos;st.setPointerCapture(e.pointerId);});
+  st.addEventListener('pointermove',function(e){ if(drag) pos=sp-(e.clientX-sx)/GAP; });
+  function up(){ if(!drag) return; drag=false; target=Math.round(pos); last=Date.now(); }
+  st.addEventListener('pointerup',up); st.addEventListener('pointercancel',up);
 })();
 </script>
 </body>
