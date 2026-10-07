@@ -1370,6 +1370,7 @@ footer{background:linear-gradient(180deg,#08103F,#050A2C)!important}
 .jv-tap-hint{text-align:center;display:block;width:100%}
 .story-body p{text-align-last:center}
 .madrina-rol{font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#C9CBDD;margin-top:4px;line-height:1.5}
+#rsvp-name-display{font-family:var(--display)!important;font-style:normal!important;font-weight:600!important;font-size:clamp(24px,6.6vw,32px)!important;letter-spacing:.04em!important;line-height:1.35!important;text-transform:capitalize}
 </style>
 </head>
 <body>
@@ -2518,7 +2519,7 @@ if(rsvpBtn && !('ontouchstart' in window)){
   }
   function pintaEncabezado(){
     if(pasesNumEl) pasesNumEl.textContent = pasesAsignados;
-    if(urlPara && nameEl){ nameEl.textContent = urlPara; nameEl.style.display = ''; }
+    if(urlPara && nameEl){ nameEl.textContent = urlPara.toLowerCase().replace(/(^|\s)(\S)/g,function(m,a,b){return a+b.toUpperCase();}); nameEl.style.display = ''; }
     if(dispEl) dispEl.style.display = urlPara ? 'flex' : 'none';
   }
 
